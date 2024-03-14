@@ -1,14 +1,14 @@
 import React from "react";
 import { useContext } from "react";
-import { UserContext } from "../../App";
+import { AppContext } from "../../context/appContext";
 import Register from "./Register";
 import Cart from "../cart/Cart";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 import { useState } from "react";
 export default function Login() {
-  const { flag, setFlag, user, setUser, users, setUsers } =
-    useContext(UserContext);
+  
+  const { user, setUser, users, setUsers,flag,setFlag } = useContext(AppContext);
   const [visible, setvisible] = useState(false);
   const [msg, setMsg] = useState();
   const validateUser = () => {

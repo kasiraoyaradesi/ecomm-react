@@ -1,19 +1,27 @@
 import React from "react";
 import "./Register.css";
 import { useContext, useState } from "react";
-import { UserContext } from "../../App";
+import { AppContext } from "../../context/appContext";
 export default function Register() {
-  const { flag, setFlag, user, setUser, users, setUsers } =
-    useContext(UserContext);
-  // const [user, setUser] = useState({ name: "", email: "", pass: "" });
+  const [msg, setMsg] = useState();
+  const { user, setUser, users, setUsers, flag, setFlag } =
+    useContext(AppContext);
+
   const newUser = () => {
-    setUsers((prev) => [...prev, user]);
-    setFlag(() => 2);
+    if (Object.keys(user).length < 2) {
+      setMsg(() => "Please complete the form");
+    } else if (user.name === "" || user.email === "" || user.pass === "") {
+      setMsg(() => "Fields cannot be blank");
+    } else {
+      setUsers((prev) => [...prev, user]);
+      setFlag(() => 2);
+    }
   };
 
   return (
     <div id="myModal" className="modal">
       <div className="modal-content">
+        <div className="Register-msg">{msg}</div>
         <div className="Rigister-header">
           <div className="Register-signup-title">Sign Up</div>
           <div onClick={() => setFlag(() => 0)} className="close">
@@ -22,6 +30,7 @@ export default function Register() {
         </div>
         <div className="Register-text-box">
           <input
+            required
             onChange={(e) =>
               setUser((prev) => ({ ...prev, name: e.target.value }))
             }
