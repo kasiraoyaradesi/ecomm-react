@@ -3,13 +3,10 @@
 }
 
 .container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    /* column-gap: 40px; */
-    /* padding:150px; */
-    margin: auto;
+    display:flex;
+    column-gap: 40px;
+    padding:150px;
+    margin:auto;
     background-image: url('../../bg1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
