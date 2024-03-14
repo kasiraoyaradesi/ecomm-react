@@ -22,10 +22,13 @@ export default function Navbar() {
       <div className="links">
         <Link to={`${PATH}/`}> Products </Link>
         <Link to={`${PATH}/order`}> Orders({orders.length}) </Link>
-        <Link to={`${PATH}/cart`}> Cart({total}) </Link>
+        {total > 0 && (
+          <Link to={`${PATH}/cart`}> Cart({total}) </Link>
+        )}
         <Link to={`${PATH}/`} onClick={handleLogout}>
           Logout
         </Link>
+        
       </div>
     </div>
   );
