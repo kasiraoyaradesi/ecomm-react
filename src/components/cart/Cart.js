@@ -36,7 +36,10 @@ export default function Cart() {
     setOrders((prev) => [...prev, order]);
     setCartItems(() => []);
     navigate("/ecomm-react/order");
+    
   };
+
+
 
   return (
     <div className="Cart-container">
@@ -45,7 +48,7 @@ export default function Cart() {
           <div className="Cart-div-left">
             <table className="Cart-table">
               <tr>
-                <th>Item</th>
+                <th>Item Count;lknb</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -91,7 +94,7 @@ export default function Cart() {
             <div className="Cart-order-value">Order Value: ₹{orderValue}</div>
             <div className="Cart-order-value">
               <button onClick={submitOrder} className="Cart-place-order">
-                Submit Order
+                Proced to buy
               </button>
             </div>
           </div>
