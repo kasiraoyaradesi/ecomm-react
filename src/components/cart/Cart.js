@@ -48,7 +48,7 @@ export default function Cart() {
           <div className="Cart-div-left">
             <table className="Cart-table">
               <tr>
-                <th>Item Count;lknb</th>
+                <th>{Object.keys(cartItems).length>1?" Count Items":"Item" }</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
